@@ -31,7 +31,7 @@ L.Control.Basemaps = L.Control.extend({
                 basemapClass += ' alt'
             }
             var url;
-            if(d.options.isconURL){
+            if(d.options.iconURL){
                 url = d.options.iconURL;
             }else {
                 var coords = {x: this.options.tileX, y: this.options.tileY};
@@ -66,9 +66,9 @@ L.Control.Basemaps = L.Control.extend({
                         [se.y, nw.x, nw.y, se.x] :
                         [nw.x, se.y, se.x, nw.y]).join(',');
 
-                        url += L.Util.getParamString(wmsParams, url, d.options.uppercase) +
+                    url += L.Util.getParamString(wmsParams, url, d.options.uppercase) +
                         (d.options.uppercase ? '&BBOX=' : '&bbox=') + bbox;
-                    }
+                }
             }
 
 
